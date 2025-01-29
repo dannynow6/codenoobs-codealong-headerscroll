@@ -41,7 +41,7 @@
 
 ## Installation
 
-- Developers can try this out themselves by following the [video](https://youtube.com/@code_noobs) or cloning the repo:
+- Developers can try this out themselves by following the [video](https://youtu.be/HqyYzQ_7k3s) or cloning the repo:
 
 1. Clone the repository:
    ```bash
