@@ -42,6 +42,7 @@
 ## Installation
 
 - Developers can try this out themselves by following the [video](https://youtu.be/HqyYzQ_7k3s) or cloning the repo:
+- This project was built with Next.js: To run it, you will need [Node.js](https://nodejs.org/en/) 18.18 or higher installed on your machine
 
 1. Clone the repository:
    ```bash
