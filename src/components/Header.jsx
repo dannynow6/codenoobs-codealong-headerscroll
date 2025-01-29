@@ -1,9 +1,39 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import Logo from "../../public/logo.png";
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPosition = window.scrollY;
+
+      if (
+        currentScrollPosition < lastScrollPosition ||
+        currentScrollPosition === 0
+      ) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+
+      setLastScrollPosition(currentScrollPosition);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollPosition]);
+
   return (
     <div
-      className={`fixed top-0 left-0 z-10 flex flex-col items-center justify-center w-full h-80 bg-base-100 gap-6 transition-transform duration-300 shadow`}
+      className={`fixed top-0 left-0 z-10 flex flex-col items-center justify-center w-full h-80 bg-base-100 gap-6 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } shadow`}
     >
       <div className="flex flex-row items-center justify-center w-full h-14">
         <img
